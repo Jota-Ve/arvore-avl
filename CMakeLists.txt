@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.22)
 #set(CMAKE_CXX_COMPILER "/usr/bin/g++-12")
 #set(CMAKE_CXX_COMPILER "/usr/bin/clang++-16")
 #
-project(revisao-c-cpp-project LANGUAGES CXX VERSION 0.0.1)
+project(arvore-avl-project LANGUAGES CXX VERSION 0.0.1)
 #
 set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -31,12 +31,12 @@ FetchContent_MakeAvailable(scn)
 # ===================
 # header only library
 # -------------------
-add_library(revisao-c-cpp INTERFACE)
-target_include_directories(revisao-c-cpp INTERFACE include/)
-target_link_libraries(revisao-c-cpp INTERFACE fmt scn)
+add_library(arvore-avl INTERFACE)
+target_include_directories(arvore-avl INTERFACE include/)
+target_link_libraries(arvore-avl INTERFACE fmt scn)
 #
 add_executable(aplicacao src/main.cpp)
-target_link_libraries(aplicacao PRIVATE revisao-c-cpp fmt scn)
+target_link_libraries(aplicacao PRIVATE arvore-avl fmt scn)
 
 #==========
 #  TESTS
@@ -50,7 +50,7 @@ target_link_libraries(aplicacao PRIVATE revisao-c-cpp fmt scn)
 # include(Catch)
 #
 # add_executable(my_test tests/teste.cpp)
-# target_link_libraries(my_test PRIVATE revisao-c-cpp Catch2::Catch2WithMain)
+# target_link_libraries(my_test PRIVATE arvore-avl Catch2::Catch2WithMain)
 # catch_discover_tests(my_test)
 
 # MANUAL:
